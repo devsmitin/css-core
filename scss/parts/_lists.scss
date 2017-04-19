@@ -1,0 +1,48 @@
+/**********************
+*   Lists             *
+***********************
+*
+*/
+
+
+// Lists
+
+.list-group {
+	padding: 0;
+	margin: 0.5rem 0;
+	
+	> * {
+		position: relative;
+		display: block;
+		padding: 0.5rem 1rem;
+		margin-bottom: -1px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+
+		&.list-header {
+			padding: 1rem;
+		}
+
+		&.active, &.active a {
+			background-color: $secondary-color;
+			color: #fff;
+		}
+	}
+
+	> *:first-child {
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+	}
+
+	&.list-hover {
+		> *:not(.list-header):not(.active):hover {
+			background-color: #eee;
+		}
+	}
+}

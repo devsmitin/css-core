@@ -1,0 +1,78 @@
+/**********************
+*   CSS Ripples       *
+*   Updated: 170317   *
+***********************
+*
+*/
+
+
+// Ripples - CSS only
+
+
+
+.ripples {
+	position: relative;
+	overflow: hidden;
+	
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+    	width: 150%;
+		padding-top: 150%;
+		margin-left: -75%;
+		margin-top: -75%;
+		border-radius: 50%;
+		opacity: 0;
+		pointer-events: none;
+	}
+	&::after {
+		background: rgba(180,180,180,.5);
+	}
+	&-teal::after {
+		background: rgba(0,150,136,.6);
+	}
+	&-red::after {
+		background: rgba(244,67,54,.6);
+	}
+	&-yellow::after {
+		background: rgba(255,235,59,.6);
+	}
+	&-orange::after {
+		background: rgba(255,152,0,.6);
+	}
+	&-purple::after {
+		background: rgba(156,39,176,.6);
+	}
+	&-green::after {
+		background: rgba(76,175,80,.6);
+	}
+	&:not(:active)::after {
+		animation: ripples 0.5s linear;
+	}
+
+	&::after {
+		visibility: hidden;
+	}
+	&:focus::after {
+		visibility: visible;
+	}
+}
+
+
+@keyframes ripples {
+	0% {
+		opacity: 1;
+		transform: scale(0.2);
+	}
+	80% {
+		opacity: .5;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+	}
+}

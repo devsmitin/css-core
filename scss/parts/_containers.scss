@@ -1,0 +1,274 @@
+/**********************
+*   Containers & Grid *
+*   Updated: 160317   *
+***********************
+*
+*/
+
+
+// Header
+
+header, .header {
+	padding: 3.5rem 0;
+	h1 { font-size: 4.2rem; }
+	h2 { font-size: 3.56rem; }
+	h3 { font-size: 2.92rem; }
+}
+
+// Section
+
+section, .section {
+	padding: 2rem 0;	
+	&.artical-head {
+		height: 35vh;
+	}
+}
+@media #{$medium-and-up} {
+	section, .section {
+		&.artical-head {
+			height: 40vh;
+		}
+	}
+}
+
+
+
+// Page
+
+article {
+	margin: 0 auto 0;
+	padding: 30px 0;
+	max-width: 1140px;
+	width: 95%;
+	background-color: white !important;
+	@extend .shadow-2;
+	&.heads-up{
+		margin: -30vh auto 60px;
+	}
+	&.no-pad {
+		padding: 0;
+	}
+	&.no-pad-bot {
+		padding-bottom: 0;
+	}
+	&.no-pad-top {
+		padding-top: 0;
+	}
+	.container {
+		width: 95%;
+	}
+}
+@media #{$medium-and-up} {
+	article {
+		width: 80%;
+		padding: 60px 0;
+		&.heads-up {
+			margin-top: -35vh;
+		}
+	}
+}
+
+
+
+// Container 
+
+.container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	&-full, .sm-full-width, &.carousel {
+		width: 100%;
+	}
+}
+@media #{$small-and-up} {
+	.container, .container.sm-full-width {
+		//width: 95%;
+		width: 540px;
+	}
+}
+@media #{$medium-and-up} {
+	.container, .container.sm-full-width {
+		//width: 90%;
+		width: 720px;
+	}
+}
+@media #{$large-and-up} {
+	.container, .container.carousel, .container.sm-full-width {
+		//width: 85%;
+		width: 960px;
+	}
+}
+@media #{$xlarge-and-up} {
+	.container, .container.carousel, .container.sm-full-width {
+		//width: 85%;
+		width: 1140px;
+	}
+}
+
+.container .row {
+	//margin-left: (-1 * $gutter-width / 2);
+	//margin-right: (-1 * $gutter-width / 2);
+}
+
+
+
+// Main Grid
+
+.row {
+	margin-left: auto;
+	margin-right: auto;
+	//margin-bottom: 20px;
+
+	&::after {
+		content: "";
+		display: -ms-flexbox;
+		display: flex;
+		clear: both;
+	}
+
+	.col {
+		width: 100%;
+		float: left;
+		box-sizing: border-box;
+		padding: 0 $gutter-width/2;
+		min-height: 1px;
+		&[class*="push-"],
+		&[class*="pull-"] {
+			position: relative;
+		}
+		$i: 1;
+		@while $i <= $num-cols {
+			$perc: unquote((100 / ($num-cols / $i)) + "%");			
+			&.xs-#{$i} {
+				width: $perc;
+				margin-left: auto;
+				left: auto;
+				right: auto;
+			}
+			$i: $i + 1;
+		}
+		$i: 1;
+		@while $i <= $num-cols {
+			$perc: unquote((100 / ($num-cols / $i)) + "%");			
+			&.offset-xs-#{$i} {
+				margin-left: $perc;
+			}
+			&.pull-xs-#{$i} {
+				right: $perc;
+			}
+			&.push-xs-#{$i} {
+				left: $perc;
+			}
+			$i: $i + 1;
+		}
+		@media #{$small-and-up} {
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				&.sm-#{$i} {
+					width: $perc;
+					margin-left: auto;
+					left: auto;
+					right: auto;
+				}
+				$i: $i + 1;
+			}
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				&.offset-sm-#{$i} {
+					margin-left: $perc;
+				}
+				&.pull-sm-#{$i} {
+					right: $perc;
+				}
+				&.push-sm-#{$i} {
+					left: $perc;
+				}
+				$i: $i + 1;
+			}
+		}
+		@media #{$medium-and-up} {
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");				
+				&.md-#{$i} {
+					width: $perc;
+					margin-left: auto;
+					left: auto;
+					right: auto;
+				}
+				$i: $i + 1
+			}
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
+				&.offset-md-#{$i} {
+					margin-left: $perc;
+				}
+				&.pull-md-#{$i} {
+					right: $perc;
+				}
+				&.push-md-#{$i} {
+					left: $perc;
+				}
+				$i: $i + 1;
+			}
+		}
+		@media #{$large-and-up} {
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				&.lg-#{$i} {
+					width: $perc;
+					margin-left: auto;
+					left: auto;
+					right: auto;
+				}
+				$i: $i + 1;
+			}
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
+				&.offset-lg-#{$i} {
+					margin-left: $perc;
+				}
+				&.pull-lg-#{$i} {
+					right: $perc;
+				}
+				&.push-lg-#{$i} {
+					left: $perc;
+				}
+				$i: $i + 1;
+			}
+		}
+		@media #{$xlarge-and-up} {
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				&.xl-#{$i} {
+					width: $perc;
+					margin-left: auto;
+					left: auto;
+					right: auto;
+				}
+				$i: $i + 1;
+			}
+			$i: 1;
+			@while $i <= $num-cols {
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
+				&.offset-xl-#{$i} {
+					margin-left: $perc;
+				}
+				&.pull-xl-#{$i} {
+					right: $perc;
+				}
+				&.push-xl-#{$i} {
+					left: $perc;
+				}
+				$i: $i + 1;
+			}
+		}
+	}
+}

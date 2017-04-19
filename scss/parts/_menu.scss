@@ -1,0 +1,51 @@
+/**********************
+*   Dropdown menu     *
+***********************
+*
+*/
+
+
+// Dropdown menu
+
+.dropdown-wrapper {
+	display: inline-block;
+	position: relative;
+	overflow: visible;
+
+	& a {
+		padding: 0 1rem;
+		display: block;
+		white-space: nowrap;
+		transition: 0.3s;
+	}
+	.drop-content {
+		display: none;
+		position: absolute;
+		min-width: 170px;
+		max-height: 350px;
+		margin: 0 0.5rem;
+		overflow-y: auto;
+		line-height: 3rem;
+		text-align: left;
+		border-radius: 2px;
+		background-color: white;
+		z-index: 998;
+		@extend .shadow-3;
+		&.pop-left {
+			right: 0;
+		}
+		&.pop-up {
+			bottom:100%;
+		}
+		&.pop-up-left {
+			bottom:100%;
+			right: 0;
+		}
+		& li {
+			position: relative;
+		}
+		& li a:hover {
+			background-color: rgba(0,0,0,.08);
+		}
+	}
+}

@@ -1,0 +1,52 @@
+/**********************
+*   Tooltip           *
+*   Updated: 050317   *
+***********************
+*
+*/
+
+
+// Basic CSS Tooltip (Beta)
+
+[data-tooltip] {
+	position: relative;
+	z-index: 1000;
+	&::before, &::after {
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+		bottom: 130%;
+		left: 50%;
+		transform: translate3d(-50%,0,0);
+		transition: 0.2s ease all;
+	}
+
+	&::before {
+		margin-bottom: 7px;
+		padding: 7px 12px;
+		width: auto;
+		max-width: 150px;
+		border-radius: 4px;
+		background-color: rgba(0,0,0,0.95);
+		color: #fff;
+		content: attr(data-tooltip);
+		text-align: center;
+		font-size: 14px;
+		line-height: 1.2;
+		text-transform: none;
+	}
+
+	&::after {
+		width: 0;
+		border-top: 7px solid rgba(0,0,0,0.95);
+		border-right: 7px solid transparent;
+		border-left: 7px solid transparent;
+		content: "";
+	}
+
+	&:hover::before, &:hover::after {
+		visibility: visible;
+		opacity: 1;
+	}
+}

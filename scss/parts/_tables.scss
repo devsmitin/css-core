@@ -1,0 +1,85 @@
+/**********************
+*   Tables            *
+***********************
+*
+*/
+
+
+// Tables
+
+.table-responsive{
+	border: 1px solid #ddd;
+}
+
+table, th, td {
+	border: none;
+}
+
+table {
+	width:100%;
+	display: table;
+	border-spacing: 0;
+
+	th {
+		font-weight: 500;
+	}
+
+	&.bordered tr:not(:last-child)> * {
+		border-bottom: 1px solid #d0d0d0;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+	}
+
+	&.striped > tbody {
+		> tr:nth-child(odd) {
+			background-color: #efefef;
+		}
+	}
+
+	&.highlight {
+		tbody > tr:hover {
+			background-color: #efefef;
+		}
+	}
+
+	&.center {
+		th, td {
+			text-align: center;
+		}
+	}
+
+	thead tr > * {
+		border-bottom: 1px solid #d0d0d0;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+	}
+
+	tr > * {
+		padding: 0.75rem 0.5rem;
+		display: table-cell;
+		text-align: left;
+		vertical-align: middle;
+	}
+}
+
+
+// Responsive Table
+@media #{$medium-and-down} {
+	.table-responsive{
+		width: 100%;
+		margin-bottom: 15px;
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	    overflow-x: auto;
+	    
+	    * {
+	    	white-space: nowrap;
+	    }
+
+	    table tr > * {
+			padding: 0.75rem;
+		}
+	}
+}

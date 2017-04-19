@@ -1,0 +1,154 @@
+/**********************
+*   Typography        *
+***********************
+*
+*/
+
+
+// Basics
+
+html{
+	@media only screen and (min-width: 0) {
+		font-size: 14px;
+	}
+	@media only screen and (min-width: $small-screen-up) {
+		font-size: 15px;
+	}
+	@media only screen and (min-width: $medium-screen-up) {
+		font-size: 16px;
+	}
+	line-height: $line-height;
+	font-family: $default-font;
+	font-weight: normal;
+	color: lighten($text-color, 20%);
+}
+
+
+// Headings
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	line-height: 1.2;
+	margin-top: 1rem;
+	margin-bottom: 1rem; 
+}
+
+//h1 { font-size: $h1-fontsize; margin-top:1.25rem; margin-bottom:1.25rem;}
+//h2 { font-size: $h2-fontsize; margin-top:1.25rem; margin-bottom:1.25rem;}
+//h3 { font-size: $h3-fontsize; margin-top:1rem; margin-bottom:1rem;}
+//h4 { font-size: $h4-fontsize; margin-top:1rem; margin-bottom:1rem;}
+//h5 { font-size: $h5-fontsize; margin-top:1rem; margin-bottom:1rem;}
+//h6 { font-size: $h6-fontsize; margin-top:1rem; margin-bottom:1rem;}
+
+h1 { font-size: $h1-fontsize; }
+h2 { font-size: $h2-fontsize; }
+h3 { font-size: $h3-fontsize; }
+h4 { font-size: $h4-fontsize; }
+h5 { font-size: $h5-fontsize; }
+h6 { font-size: $h6-fontsize; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+
+
+// Text Styles
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+em { font-style: italic; }
+.small, small { font-size: 70%; }
+.light { font-weight: 300; }
+.bold, strong { font-weight: bold; }
+
+i {
+	font-size: inherit;
+	line-height: inherit !important;
+	pointer-events: none;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+
+	&.link-hover:hover {
+		text-decoration: underline;
+	}
+}
+
+kbd, code, mark, samp {
+	padding: 2px 4px;
+	border-radius: 2px;
+}
+
+kbd {
+	background-color: #353535;
+	color: #ffffff;
+}
+
+samp {
+	background-color: #f0f0f0;
+}
+
+code {
+	color: #c62828;
+	background-color: #fcf1f1;
+}
+
+mark {
+	background-color: #fff59d;
+}
+
+var {
+	color: #303f9f;
+}
+
+del {
+	color: #c62828;
+}
+
+.uppercase {text-transform: uppercase;}
+
+.lowercase {text-transform: lowercase;}
+
+.capitalize {text-transform: capitalize;}
+
+.underline {text-decoration:underline;}
+
+
+
+// Tags
+
+.tags {
+	line-height: 2;
+	
+	span {
+		padding: 0 10px;
+		margin: 5px;
+		border-radius: 3px;
+		background-color: #eaeaea;
+		display: inline-block;
+		@extend .shadow-1
+	}
+
+	&.tags-rounded {
+		span {
+			padding: 0 20px;
+			border-radius: 20px;
+		}
+	}
+}
+
+
+
+// Blockquote
+
+blockquote {
+	margin: 1rem 0;
+	padding-left: 1rem;
+	border-left: 5px solid $input-border-color;
+	font-style: italic; 
+}
