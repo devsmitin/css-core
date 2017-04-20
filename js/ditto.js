@@ -14,7 +14,7 @@
 		e.preventDefault();
 	});
 	$.fn.prelodr = function (options) {
-		var settings = $.extend({}, options);
+		// var settings = $.extend({}, options);
 		return this.each(function () {
 			var $elm = $(this),
 				d = $elm.attr('data-delay') ? $elm.attr('data-delay') : 1000;
@@ -24,36 +24,35 @@
 		});
 	};
 	$.fn.slideNav = function (options) {
-		var settings = $.extend({}, options);
+		// var settings = $.extend({}, options);
 		return this.each(function () {
-			var $elm = $(this);
-			function togSlide() {
-				$($elm.attr('data-target')).toggleClass('open');
-				var ol =  $('<div />', {class: 'nav-overlay'});
-				if ($($elm.attr('data-target')).hasClass('open')) {
-					$('body').addClass('no-scroll');
-					// $('body').append(ol);
-					ol.insertAfter($elm.attr('data-target'));
-					if ($($elm.attr('data-target')).hasClass('below-nav')) {
-						ol.addClass('below-nav');
-					}
-				} else {
-					$('body').removeClass('no-scroll');
+			var $elm = $(this),
+				$ol =  $('<div />', {class: 'nav-overlay'});
+			function slideIn() {
+				$($elm.attr('data-target')).addClass('open');
+				$('body').addClass('no-scroll');
+				$ol.insertAfter($elm.attr('data-target'));
+				if ($($elm.attr('data-target')).hasClass('below-nav')) {
+					$ol.addClass('below-nav');
 				}
 			}
-			function closeSlide() {
+			function slideOut() {
 				$($elm.attr('data-target')).removeClass('open');
 				$('body').removeClass('no-scroll');
+				$('.nav-overlay').remove();
 			}
 			$elm.on('click', function (e) {
-				$('body, html, a:not([class*="dropdown"])').on('click', function (e) {
-					if (!$(e.target).is($elm)) {
-						closeSlide();
-						$('.nav-overlay').remove();
-					}
-				});
-				togSlide();
 				e.stopPropagation();
+				if ($($elm.attr('data-target')).hasClass('open')) {
+					slideOut();
+				} else {
+					slideIn();
+				}
+			});
+			$('body, html, a:not([class*="dropdown"])').on('click', function (e) {
+				if (!$(e.target).is($elm)) {
+					slideOut();
+				}
 			});
 		});
 	};

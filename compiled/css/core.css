@@ -1524,11 +1524,11 @@ nav ul.main-nav li.logo-head .logo-view { min-height: 56px; border-bottom: 1px s
 
 nav ul.main-nav li.logo-head .logo-view .brand-logo { display: block; font-size: 22px; float: none; }
 
-nav ul.drop-content { display: none; min-width: 100px; max-height: 650px; height: auto; overflow-y: auto; position: absolute; top: 100%; background-color: #fff; z-index: 1000; }
+nav ul.drop-content { display: none; min-width: 100px; max-height: 650px; height: auto; width: auto; overflow-y: auto; position: absolute; top: 100%; right: 0; background-color: #fff; z-index: 1000; }
 
 nav ul.drop-content li { display: block; float: none; line-height: 48px; }
 
-nav ul.drop-content li a { text-align: left; color: #212121; }
+nav ul.drop-content li a { text-align: left; color: #212121; white-space: nowrap; }
 
 nav ul.sliding-nav { float: right; }
 
@@ -1913,7 +1913,7 @@ button.btn-floating, button.btn-more { border: none; }
 
 .carousel .carousel-nav label { background-color: rgba(0, 0, 0, 0.3); border-radius: 50%; width: 14px; height: 14px; margin: 0.75rem 0.5rem; border: 2px solid #fff; }
 
-.carousel .arrow { position: absolute; top: 0; display: block; height: 100%; text-align: center; background-color: rgba(0, 0, 0, 0.1); }
+.carousel .arrow { position: absolute; top: 0; display: block; text-align: center; background-color: rgba(0, 0, 0, 0.1); top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
 
 .carousel .arrow.arrow-prev { left: 0; }
 
@@ -1921,7 +1921,7 @@ button.btn-floating, button.btn-more { border: none; }
 
 .carousel .arrow.arrow-play { left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
 
-.carousel .arrow i { top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); font-size: 50px; padding: 0 0.5rem; color: #fff; position: relative; line-height: 1; }
+.carousel .arrow i { font-size: 3rem; padding: 0 0.5rem; color: #fff; position: relative; line-height: 1; }
 
 .carousel input:nth-child(1):checked ~ .carousel-nav label:nth-child(1), .carousel input:nth-child(2):checked ~ .carousel-nav label:nth-child(2), .carousel input:nth-child(3):checked ~ .carousel-nav label:nth-child(3), .carousel input:nth-child(4):checked ~ .carousel-nav label:nth-child(4), .carousel input:nth-child(5):checked ~ .carousel-nav label:nth-child(5), .carousel input:nth-child(6):checked ~ .carousel-nav label:nth-child(6), .carousel input:nth-child(7):checked ~ .carousel-nav label:nth-child(7), .carousel input:nth-child(8):checked ~ .carousel-nav label:nth-child(8) { background-color: rgba(0, 0, 0, 0.7); }
 

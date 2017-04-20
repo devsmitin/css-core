@@ -112,9 +112,11 @@ nav {
 		min-width: 100px;
 		max-height: 650px;
 		height: auto;
+		width: auto;
 		overflow-y: auto;
 		position: absolute;
 		top: 100%;
+		right: 0;
 		background-color: #fff;
 		z-index: 1000;
 		@extend .shadow-3;
@@ -126,6 +128,7 @@ nav {
 		li a {
 			text-align: left;
 			color: $text-color;
+			white-space: nowrap;
 		}
 	}
 	
