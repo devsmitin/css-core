@@ -29,8 +29,14 @@
 			var $elm = $(this);
 			function togSlide() {
 				$($elm.attr('data-target')).toggleClass('open');
+				var ol =  $('<div />', {class: 'nav-overlay'});
 				if ($($elm.attr('data-target')).hasClass('open')) {
 					$('body').addClass('no-scroll');
+					// $('body').append(ol);
+					ol.insertAfter($elm.attr('data-target'));
+					if ($($elm.attr('data-target')).hasClass('below-nav')) {
+						ol.addClass('below-nav');
+					}
 				} else {
 					$('body').removeClass('no-scroll');
 				}
@@ -43,6 +49,7 @@
 				$('body, html, a:not([class*="dropdown"])').on('click', function (e) {
 					if (!$(e.target).is($elm)) {
 						closeSlide();
+						$('.nav-overlay').remove();
 					}
 				});
 				togSlide();
