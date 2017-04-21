@@ -1541,7 +1541,7 @@ nav i { display: block !important; font-size: 24px !important; height: 56px !imp
 .fixed-nav nav { position: fixed; }
 
 @media only screen and (max-width: 992px) { nav .container { width: 100% !important; }
-  nav a.collapse-button { display: inline-block; height: 56px; float: left; padding: 1.3rem 1rem; }
+  nav a.collapse-button { display: inline-block; height: 56px; float: left; padding: 1.2rem 1rem; }
   nav a.collapse-button span { display: block; width: 20px; height: 3px; margin: 3px; padding: 0; border-radius: 2px; background: #000000; pointer-events: none; }
   nav ul.main-nav { height: 100%; width: 300px; max-width: 85%; position: fixed; left: 0; top: 0; background: #fafafa; z-index: 999; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); transition: .3s ease-out all; overflow-y: auto; }
   nav ul.main-nav.below-nav { height: calc(100% - 56px); top: 56px; }
