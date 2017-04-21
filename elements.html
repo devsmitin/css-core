@@ -20,12 +20,11 @@
 			</div>
 		</div>
 
-
 		<div class="fixed-nav">
 			<nav class="">
 				<div class="nav-wrapper floatfix">
 					<!-- <a href="/" class="brand-logo ripples"><img src="titlesvg.svg" alt="CSS-Core" height="56px"></a> -->
-					<a href="#!" class="brand-logo ripples">CSS-Core</a>
+					<a href="index.html" class="brand-logo ripples">CSS-Core</a>
 					<a href="#1" class="small right-float teal white-text ripples">Test</a>
 				</div>
 			</nav>
@@ -365,26 +364,20 @@
 							</fieldset>
 						</form>
 					</div>
-					<div class="col lg-6">
-						<figure>
-							<img src="https://source.unsplash.com/WLUHO9A_xik/720x480" alt="Figure" class="">
-							<figcaption>Fig.1 - A view of somewhere.</figcaption>
-						</figure>
-					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="green light-2 shadow-1">
+		<section class="teal light-3 shadow-1">
 			<div class="container">
 				<div class="row">
 					<div class="col sm-12 center-align">
-						<h3 class="">Card and Image-view Test</h3>
+						<h3 class="">Card Image-view and figure Test</h3>
 					</div>
-					<div class="col md-6">
+					<div class="col md-4">
 						<div class="card">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/WLUHO9A_xik/720x480" alt="cover image" class="responsive img-view">
+								<img src="https://source.unsplash.com/NFs6dRTBgaM/720x480" alt="cover image" class="responsive img-view">
 							</div>
 							<div class="card-content">
 								<span class="card-title">Download and Setup</span>
@@ -395,10 +388,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="col md-6">
+					<div class="col md-4">
 						<div class="card">
 							<div class="card-image">
-								<img src="https://source.unsplash.com/WLUHO9A_xik/720x480" alt="cover image" class="responsive img-view">
+								<img src="https://source.unsplash.com/NFs6dRTBgaM/720x480" alt="cover image" class="responsive img-view">
 							</div>
 							<div class="card-content">
 								<span class="card-title">Download and Setup</span>
@@ -408,6 +401,12 @@
 								<a href="#!" class="btn btn-flat red-text text-light-1">Link <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 							</div>
 						</div>
+					</div>
+					<div class="col md-4">
+						<figure>
+							<img src="https://source.unsplash.com/NFs6dRTBgaM/720x480" alt="Figure" class="">
+							<figcaption>Fig.1 - A view of somewhere.</figcaption>
+						</figure>
 					</div>
 				</div>
 			</div>
@@ -418,7 +417,7 @@
 				<h3 class="center-align">Parallax Test</h3>		
 			</div>
 			<div class="parallax">
-				<img src="https://source.unsplash.com/WLUHO9A_xik" alt="parallax image" style="display: block; transform: translate3d(-50%, -9px, 0px) scale(1);">
+				<img src="https://source.unsplash.com/NFs6dRTBgaM" alt="parallax image" style="display: block; transform: translate3d(-50%, -9px, 0px) scale(1);">
 			</div>
 		</section>
 
@@ -442,6 +441,48 @@
 				<div class="col sm-12 center-align">
 					<button class="btn ripples" onclick="alertME('This is an alert dialog.')">Alert</button>
 					<button class="btn ripples dialog-view" data-target="#about">Open Dialog</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="no-pad shadow-2 blue-grey">
+			<div class="carousel white-text">
+				
+				<input id="slide-1" type="radio" name="carousel" checked>
+				<input id="slide-2" type="radio" name="carousel">
+	
+				<div class="carousel-items">
+					<div class="carousel-item grey dark-4">
+						<header>
+							<div class="row">
+								<div class="col lg-12">
+									<h1>CSS-Core</h1>
+									<h4>Core styling for HTML5 elements.</h4>
+									<button class="btn">Learn More</button>
+								</div>
+							</div>
+						</header>
+						<label for="slide-2" class="arrow arrow-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></label>
+						<label for="slide-2" class="arrow arrow-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></label>
+					</div>
+					<div class="carousel-item blue-grey dark-4">
+						<header>
+							<div class="row">
+								<div class="col lg-12">
+									<h1>CSS-Core</h1>
+									<h4>Core styling for HTML5 elements.</h4>
+									<button class="btn">Learn More</button>
+								</div>
+							</div>
+						</header>
+						<label for="slide-1" class="arrow arrow-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></label>
+						<label for="slide-1" class="arrow arrow-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></label>
+					</div>
+				</div>
+
+				<div class="carousel-nav">
+					<label for="slide-1"></label>
+					<label for="slide-2"></label>
 				</div>
 			</div>
 		</section>

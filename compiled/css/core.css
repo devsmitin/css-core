@@ -1350,7 +1350,7 @@ body.theme-fusion-dark footer, body.theme-fusion-dark footer a, body.theme-fusio
 
 .border-0 { border: none; }
 
-.border-1, fieldset, input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea, select, input[type=text].bordered, input[type=password].bordered, input[type=email].bordered, input[type=url].bordered, input[type=time].bordered, input[type=date].bordered, input[type=datetime].bordered, input[type=datetime-local].bordered, input[type=tel].bordered, input[type=number].bordered, input[type=search].bordered, textarea.bordered, select.bordered { border: 1px solid #bdbdbd; }
+.border-1, fieldset, figure, input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea, select, input[type=text].bordered, input[type=password].bordered, input[type=email].bordered, input[type=url].bordered, input[type=time].bordered, input[type=date].bordered, input[type=datetime].bordered, input[type=datetime-local].bordered, input[type=tel].bordered, input[type=number].bordered, input[type=search].bordered, textarea.bordered, select.bordered { border: 1px solid #bdbdbd; }
 
 .border-2 { border: 2px solid #bdbdbd; }
 
@@ -1398,9 +1398,9 @@ ul.bullets { list-style-type: disc; padding-left: 1.5rem; }
 
 ol { padding-left: 1.5rem; }
 
-figure { margin: 1rem 3rem; }
+figure { margin: 1rem 2rem; }
 
-figure figcaption { font-style: italic; text-align: center; }
+figure figcaption { font-style: italic; text-align: center; padding: 0.5rem 0; }
 
 .floatfix::after, nav .nav-wrapper::after { display: block; content: ''; clear: both; }
 
