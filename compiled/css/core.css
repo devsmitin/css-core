@@ -1682,7 +1682,7 @@ table tr > * { padding: 0.75rem 0.5rem; display: table-cell; text-align: left; v
 */
 input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea, select { font-size: 1rem; color: #545454; background-color: transparent; outline: none; height: 36px; line-height: 36px; width: 100%; margin-bottom: 0.25rem; padding: 0; box-shadow: none; box-sizing: border-box; transition: all 0.3s; border-color: transparent; border-bottom-color: #bdbdbd; /* Chrome/Opera/Safari */ /* Firefox 19+ */ /* Firefox 18- */ /* IE 10+ */ }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=time]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus, select:focus { border-bottom-color: #2196F3; box-shadow: 0 1px 0 0 #2196F3; }
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=time]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=search]:focus, textarea:focus, select:focus { border-bottom-color: #2196F3; box-shadow: 0 2px 0 -1px #2196F3; }
 
 input[type=text].bordered, input[type=password].bordered, input[type=email].bordered, input[type=url].bordered, input[type=time].bordered, input[type=date].bordered, input[type=datetime].bordered, input[type=datetime-local].bordered, input[type=tel].bordered, input[type=number].bordered, input[type=search].bordered, textarea.bordered, select.bordered { background-color: #fff; border-radius: 2px; padding-left: 0.5rem; padding-right: 0.5rem; }
 
@@ -1714,23 +1714,27 @@ input[type=file]:focus { outline: 1px dotted; }
 
 input[type=radio] { opacity: 0; position: fixed; }
 
-input[type=radio] + label { font-weight: normal; }
+input[type=radio] ~ label { font-weight: normal; cursor: pointer; }
 
-input[type=radio] + label::before { content: ''; height: 16px; width: 16px; border-radius: 50%; border: 2px solid #bdbdbd; background-color: #ffffff; margin-bottom: 0.25rem; margin-right: 0.5rem; display: inline-block; vertical-align: middle; transition: 0.1s all; }
+input[type=radio] ~ label::before { content: ''; height: 16px; width: 16px; border-radius: 50%; border: 2px solid #bdbdbd; background-color: #ffffff; margin-bottom: 0.25rem; margin-right: 0.5rem; display: inline-block; vertical-align: middle; transition: 0.1s all; }
 
-input[type=radio]:focus + label { outline: 1px dotted; }
+input[type=radio] ~ label:hover::before { border-color: #2196F3; }
 
-input[type=radio]:checked + label::before { border: 0px solid #ffffff; background-color: #2196F3; }
+input[type=radio]:focus ~ label { outline: 1px dotted; }
+
+input[type=radio]:checked ~ label::before { border-color: #9acffa; background-color: #2196F3; }
 
 input[type=checkbox] { opacity: 0; position: fixed; }
 
-input[type=checkbox] + label { font-weight: normal; }
+input[type=checkbox] ~ label { font-weight: normal; cursor: pointer; }
 
-input[type=checkbox] + label::before { content: ''; height: 16px; width: 16px; border: 2px solid #bdbdbd; background-color: #ffffff; margin-bottom: 0.25rem; margin-right: 0.5rem; display: inline-block; vertical-align: middle; transition: 0.1s all; }
+input[type=checkbox] ~ label::before { content: ''; height: 16px; width: 16px; border: 2px solid #bdbdbd; background-color: #ffffff; margin-bottom: 0.25rem; margin-right: 0.5rem; display: inline-block; vertical-align: middle; transition: 0.1s all; }
 
-input[type=checkbox]:focus + label { outline: 1px dotted; }
+input[type=checkbox] ~ label:hover::before { border-color: #2196F3; }
 
-input[type=checkbox]:checked + label::before { border: 2px solid #2196F3; width: 16px; height: 8px; border-top: 0; border-right: 0; margin-bottom: 0.5rem; -webkit-transform: rotate(-50deg); -ms-transform: rotate(-50deg); transform: rotate(-50deg); }
+input[type=checkbox]:focus ~ label { outline: 1px dotted; }
+
+input[type=checkbox]:checked ~ label::before { border: 3px solid #2196F3; width: 16px; height: 8px; border-top: 0; border-right: 0; margin-bottom: 0.5rem; -webkit-transform: rotate(-50deg); -ms-transform: rotate(-50deg); transform: rotate(-50deg); }
 
 input[type=range] { background-color: transparent; border: none; width: 100%; margin: 15px 0; padding: 0; cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 1px solid transparent; }
 
@@ -1764,7 +1768,7 @@ input[type=range]:focus::-ms-fill-upper { background: #aaa; }
 
 .input-group label { color: #212121; display: inline-block; margin-bottom: 0.25rem; font-weight: 600; }
 
-.input-group span.input-help { font-size: 0.8rem; color: #3b3b3b; font-weight: 600; }
+.input-group .input-help { font-size: 0.8rem; color: #3b3b3b; font-weight: 600; }
 
 .input-group .range-group { padding: 0.5rem 0.25rem; }
 

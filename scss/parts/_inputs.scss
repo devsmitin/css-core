@@ -39,7 +39,7 @@ select {
 
 	&:focus {
 		border-bottom-color: $input-focus-color;
-		box-shadow: 0 1px 0 0 $input-focus-color;
+		box-shadow: 0 2px 0 -1px $input-focus-color;
 	}
 
 	&.bordered {
@@ -127,12 +127,12 @@ input[type=file] {
 
 
 input[type=radio] {
-	//display: none;
 	opacity: 0;
 	position:fixed;
 
-	& + label {
+	& ~ label {
 		font-weight: normal;
+		cursor: pointer;
 		&::before {
 			content: '';
 			height: 16px;
@@ -146,15 +146,18 @@ input[type=radio] {
 			vertical-align:middle;
 			transition: 0.1s all;
 		}
+		&:hover::before {
+			border-color: $input-focus-color;
+		}
 	}
-
-	&:focus + label {
+	
+	&:focus ~ label {
 		outline: 1px dotted;
 	}
 
-	&:checked + label {
+	&:checked ~ label {
 		&::before {
-			border: 0px solid #ffffff;
+			border-color:lighten($input-focus-color, 25%);
 			background-color: $input-focus-color;
 		}
 	}
@@ -162,12 +165,12 @@ input[type=radio] {
 
 
 input[type=checkbox] {
-	//display: none;
 	opacity: 0;
 	position:fixed;
 
-	& + label {
+	& ~ label {
 		font-weight: normal;
+		cursor: pointer;
 		&::before {
 			content: '';
 			height: 16px;
@@ -180,17 +183,19 @@ input[type=checkbox] {
 			display: inline-block;
 			vertical-align:middle;
 			transition: 0.1s all;
+		}		
+		&:hover::before {
+			border-color: $input-focus-color;
 		}
 	}
 
-	&:focus + label {
+	&:focus ~ label {
 		outline: 1px dotted;
 	}
 
-	&:checked + label {
+	&:checked ~ label {
 		&::before {
-			border: 2px solid $input-focus-color;
-			//background-color: $input-focus-color;
+			border: 3px solid $input-focus-color;
 			width: 16px;
 			height: 8px;
 			border-top: 0;
@@ -306,7 +311,7 @@ input[type=range] {
 		font-weight: 600;
 	}
 
-	span.input-help {
+	.input-help {
 		font-size: 0.8rem;
 		color: lighten($input-label-color, 10%);
 		font-weight: 600;
