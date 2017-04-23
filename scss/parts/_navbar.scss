@@ -186,7 +186,7 @@ nav {
 			background: #fafafa;
 			z-index: 999;
 			transform: translate3d(-100%, 0 , 0);
-			transition: .3s ease-out all;
+			transition: .3s all;
 			overflow-y: auto;
 			&.below-nav {
 				height: calc(100% - 56px);

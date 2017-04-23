@@ -320,8 +320,11 @@ figure {
 	}
 }
 
-.elevate:hover {
-	@extend .shadow-5;
+.elevate {
+	transition: 0.3s;
+	&:hover {
+		@extend .shadow-5;
+	}
 }
 
 .floatfix::after {

@@ -1402,6 +1402,8 @@ figure { margin: 1rem 2rem; }
 
 figure figcaption { font-style: italic; text-align: center; padding: 0.5rem 0; }
 
+.elevate { transition: 0.3s; }
+
 .floatfix::after, nav .nav-wrapper::after { display: block; content: ''; clear: both; }
 
 .eq-height { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
