@@ -1388,7 +1388,7 @@ fieldset legend { padding: 0 0.5rem; font-weight: 600; font-size: 1.2rem; }
 
 .content-block { padding: 0.75rem; overflow-wrap: break-word; }
 
-hr { border-style: solid; border-width: 1px 1px 0; border-color: #e0e0e0; display: inline-block; width: 100%; }
+hr { border-style: solid; border-width: 1px 0 0; border-color: #e0e0e0; display: inline-block; width: 100%; }
 
 ul { padding: 0; list-style-type: none; }
 
@@ -1545,7 +1545,7 @@ nav i { display: block !important; font-size: 24px !important; height: 56px !imp
 @media only screen and (max-width: 992px) { nav .container { width: 100% !important; }
   nav a.collapse-button { display: inline-block; height: 56px; float: left; padding: 1.2rem 1rem; }
   nav a.collapse-button span { display: block; width: 20px; height: 3px; margin: 3px; padding: 0; border-radius: 2px; background: #000000; pointer-events: none; }
-  nav ul.main-nav { height: 100%; width: 300px; max-width: 85%; position: fixed; left: 0; top: 0; background: #fafafa; z-index: 999; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); transition: .3s ease-out all; overflow-y: auto; }
+  nav ul.main-nav { height: 100%; width: 300px; max-width: 85%; position: fixed; left: 0; top: 0; background: #fafafa; z-index: 999; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); transition: .3s all; overflow-y: auto; }
   nav ul.main-nav.below-nav { height: calc(100% - 56px); top: 56px; }
   nav ul.main-nav.below-nav .logo-head { display: none !important; }
   nav ul.main-nav.right-float { left: auto; right: 0; -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); }
