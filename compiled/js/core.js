@@ -13,6 +13,9 @@
 		}
 		e.preventDefault();
 	});
+	$('a[href="#"]').on('click', function () {
+		return false;
+	});
 	$.fn.prelodr = function (options) {
 		// var settings = $.extend({}, options);
 		return this.each(function () {
