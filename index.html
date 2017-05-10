@@ -12,101 +12,194 @@
 		<link href="compiled/css/core.min.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 			html {font-family: Georgia;}
-			footer {position: fixed;width: 100%; bottom: 0;z-index: -1}
-			.page-wrap {margin-bottom: 166px;}
-			.compatibility .col:hover i.fa {color: #fff; transition: 0.25s;text-shadow: 0 0 2px #fff;}
+			/*h1, h2, nav .brand-logo {font-family: Georgia;}*/
+			@media only screen and (min-width: 993px){
+				.sidenav-md nav {width: 275px;}
+				.sidenav-md, .sidenav-md nav{height: auto; height: 100%}
+				.sidenav-md nav .brand-logo {display: block;float: none;text-align: center; }
+				.sidenav-md nav ul.main-nav {float: none; width: 100%;height: auto;}
+				.sidenav-md nav ul.main-nav > li {display: block; float: none;}
+				.sidenav-md nav ul.main-nav > li a {border-bottom: 1px solid #efefef;font-size: 0.8rem;padding-left: 4rem;}
+				.sidenav-md nav ul.main-nav > li .drop-content {width: 100%;position: relative;box-shadow: none;}
+				.sidenav-md nav ul.main-nav > li .drop-content li:not(:last-child) a {border: none;}
+				.has-sidenav-md {padding-left: 275px;}
+			}
 		</style>
 	</head>
-	<body class="theme-dark blue-grey dark-4 white-text">
-		<div class="fixed-nav">
-			<nav class="blue-grey dark-3">
+	<body class="">
+		<div class="fixed-nav sidenav-md">
+			<nav class="">
 				<div class="nav-wrapper">
-					<a href="#!" class="collapse-button ripples" data-target="#main-nav">
-						<span class="white" style=""></span>
-						<span class="white" style=""></span>
-						<span class="white" style=""></span>
+					<a href="#" class="collapse-button ripples ripples-orange" data-target="#main-nav">
+						<span class="purple dark-3" style=""></span>
+						<span class="purple dark-3" style=""></span>
+						<span class="purple dark-3" style=""></span>
 					</a>
-					<a href="#1" class="brand-logo ripples titlefont">CSS-Core</a>
+					<a href="#1" class="brand-logo ripples ripples-orange purple-text text-dark-3">CSS-Core</a>
 					<ul class="main-nav altr" id="main-nav">
-						<li><a href="#!" class="ripples">Features</a></li>
-						<li><a href="#!" class="ripples">Documentation</a></li>
+						<li>
+							<a href="#" class="dropdown ripples" data-target="#drop1">Features <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+							<ul class="drop-content" id="drop1">
+								<li><a href="#2" class="ripples">Grid</a></li>
+								<li><a href="#3" class="ripples">Typography</a></li>
+							</ul>
+						</li>
+						<!-- <li><a href="#" class="ripples">Features</a></li> -->
+						<!-- <li><a href="#" class="ripples">Documentation</a></li> -->
 					</ul>
 				</div>
 			</nav>
 		</div>
 
-		<div class="page-wrap">			
-			<section class="orange light-1" style="padding-bottom: 5rem">
-				<header class="container">
+		<div class="has-sidenav-md">
+			<div class="container-full">
+				<section class="no-pad" id="1">
 					<div class="row">
-						<div class="col sm-7 grey-text text-dark-3">
-							<h1>CSS-Core</h1>
-							<h4>Core styling for HTML5 elements.</h4>
-						</div>
-						<div class="col sm-5 white-text">
-						</div>
-					</div>
-				</header>
-			</section>
-
-			<div class="container">
-				<section class="blue-grey dark-3 grey-text compatibility" style="margin-top: -3rem;">
-					<div class="center-align">
-						<div class="row">
-							<div class="col">
-								<p>Compatible with:</p>
-							</div>
-							<div class="col xs-4 md-2">
-								<i class="fa fa-2x fa-chrome" aria-hidden="true"></i><p>Chrome</p>
-							</div>
-							<div class="col xs-4 md-2">
-								<i class="fa fa-2x fa-firefox" aria-hidden="true"></i><p>Firefox</p>
-							</div>
-							<div class="col xs-4 md-2">
-								<i class="fa fa-2x fa-safari" aria-hidden="true"></i><p>Safari</p>
-							</div>
-							<div class="col xs-4 md-2">
-								<i class="fa fa-2x fa-opera" aria-hidden="true"></i><p>Opera</p>
-							</div>
-							<div class="col xs-4 md-2">
-								<i class="fa fa-2x fa-edge" aria-hidden="true"></i><p>Edge</p>
-							</div>
-							<div class="col xs-4 md-2">
-								<i class="fa fa-2x fa-internet-explorer" aria-hidden="true"></i><p>IE (10+)</p>
-							</div>
+						<div class="col no-pad">
+							<header class="purple dark-3 white-text">
+								<div class="row">
+									<div class="col sm-10 offset-sm-1">
+										<h1>CSS-Core</h1>
+										<h4>Create stunning websites from scratch - easily!</h4>
+										<p>Last update: May 10</p>
+										<a href="#" class="btn underline pink dark-1 ripples">Know more</a>
+									</div>
+								</div>
+							</header>
 						</div>
 					</div>
 				</section>
 
-				<section class="blue-grey dark-2 grey-text">
-					<div class="container center-align">
+				<section class="blue" id="2">
+					<!-- <div class="container">
+						<div class="row" style="min-height: 100px;">
+							<div class="col sm-12 white-text">
+								<h3 class="">Responsive Container &amp; Grid Test</h3>
+								<p class="hide-sm hide-md hide-lg hide-xl">100% on mobile devices (up-to 559px)</p>
+								<p class="hide-xs hide-md hide-lg hide-xl">540px on small devices (560px or more)</p>
+								<p class="hide-xs hide-sm hide-lg hide-xl">720px on tablet devices (768px or more)</p>
+								<p class="hide-xs hide-sm hide-md hide-xl">960px on medium devices (992px or more)</p>
+								<p class="hide-xs hide-sm hide-md hide-lg">1140px on Large devices (1201px or more)</p>
+							</div>
+						</div>
+					</div> -->
+					
+					<div class="row">
+						<div class="col sm-10 offset-sm-1 white-text">
+							<h3 class="">Grid</h3>
+							<p class="">Responsive 12 column grid.</p>
+						</div>
+						<div class="col sm-10 offset-sm-1 no-pad">
+							<div class="row center-align" style="">
+								<div class="col sm-6 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-6</div>
+								</div>
+								<div class="col sm-6 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-6</div>
+								</div>
+							</div>
+							
+							<div class="row center-align" style="">
+								<div class="col sm-4 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-4</div>
+								</div>
+								<div class="col sm-8 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-8</div>
+								</div>
+							</div>
+							
+							<div class="row center-align" style="">
+								<div class="col sm-3 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-3</div>
+								</div>
+								<div class="col sm-3 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-3</div>
+								</div>
+								<div class="col sm-3 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-3</div>
+								</div>
+								<div class="col sm-3 grey" style="margin-top: 20px; margin-bottom: 20px;">
+									<div class="white" style="height: 60px;">sm-3</div>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</section>
+
+				<section class="white" id="3">
+					<div class="container">
+						<div class="row">
+							<div class="col sm-10 offset-sm-1 center-align">
+								<h3 class="">Typography</h3>
+							</div>
+							<div class="col sm-10 offset-sm-1">
+								<h1>This is H1 heading.</h1>
+								<h2>This is H2 heading.</h2>
+								<h3>This is H3 heading.</h3>
+								<h4>This is H4 heading.</h4>
+								<h5>This is H5 heading.</h5>
+								<h6>This is H6 heading.</h6>
+								<label>This is a label.</label><br>
+								<span>This is a span.</span><br>
+								<strong>Strong text</strong><br>
+								<em>Emphasized text</em><br>
+								<code>&lt;code&gt;</code><br>
+								<samp>Sample output from a computer program</samp><br>
+								<kbd>Keyboard input</kbd><br>
+								<var>Variable</var><br>
+								<mark>Marked Text</mark><br>
+								<del>delete</del> &amp; <ins>insert</ins>
+								
+								<p>A paragraph of Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum purus at pretium posuere. Phasellus tempus ullamcorper eros, non consectetur turpis tempus vitae. Sed eu justo porttitor, convallis sapien consequat, elementum tellus. Donec id ultricies purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+								<blockquote>
+									<h3>This is an example quotation that uses the blockquote tag.</h3>
+									<!-- <p>Here is another line to make it look bigger.</p> -->
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum purus at pretium posuere. Phasellus tempus ullamcorper eros, non consectetur turpis tempus vitae. Sed eu justo porttitor, convallis sapien consequat, elementum tellus. Donec id ultricies purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+								</blockquote>
+
+								<p class="bold">Unordered List</p>
+								<ul class="bullets">
+									<li>One</li>
+									<li>Two</li>
+									<li>Three</li>
+									<li>Four</li>
+								</ul>
+
+								<p class="bold">Ordered List</p>
+								<ol>
+									<li>one, two
+										<ol>
+											<li>buckle my shoe</li>
+										</ol>
+									</li>
+									<li>three, four
+										<ol>
+											<li>knock at the door</li>
+										</ol>
+									</li>
+									<li>Five, six
+										<ol>
+											<li>pick up sticks</li>
+										</ol>
+									</li>
+									<li>Seven, eight, lay them straight
+										<ol>
+											<li>Nine, ten, a big fat hen</li>
+											<li>Eleven, twelve, dig and delve</li>
+											<li>Thirteen, fourteen, maids a’courting</li>
+											<li>Fifteen, sixteen, maids in the kitchen</li>
+											<li>Seventeen, eighteen, maids a’waiting</li>
+											<li>Nineteen, twenty, my platter’s empty …</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>
 		</div>
-		
-		
-		<footer class="transparent">
-			<div class="footer-content">
-				<div class="container">
-					<div class="row">
-						<div class="col sm-12">
-							<a href="#!" class="btn-flat">Getting Started</a>
-							<a href="#!" class="btn-flat">About</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer-copyright">
-				<div class="container">
-					<div class="row">
-						<div class="col sm-12 grey-text">
-							<span>&copy; 2017 | <em>A <a href="https://www.linkedin.com/in/imsmit/" class="link-hover">Smit</a> Creatoin.</em></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="compiled/js/core.js" type="text/javascript"></script>

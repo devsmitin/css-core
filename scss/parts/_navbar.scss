@@ -49,6 +49,7 @@ nav {
 			float: left;
 			padding: 0;
 			margin: 0;
+			position: relative;
 			&.active {
 				background-color: rgba(#dadada, 0.4);
 			}
@@ -207,7 +208,7 @@ nav {
 			li {
 				float: none;
 				width: 100%;
-				display: block !important;
+				display: block;
 				a {
 					text-align: left;
 					padding: 0 25px !important;
@@ -222,7 +223,7 @@ nav {
 
 		ul.drop-content {
 			display: none;
-			min-width: 100% !important;
+			min-width: 100%;
 			position: relative;
 			background-color: $background-color;
 			li {

@@ -64,15 +64,15 @@
 
 @keyframes ripples {
 	0% {
-		opacity: 1;
-		transform: scale(0.2);
-	}
-	80% {
-		opacity: .5;
-		transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		transform: scale(1);
-	}
+      transform: scale(0.2);
+      opacity: 1;
+    }
+    80% {
+      transform: scale(0.8);
+      opacity: 0.1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
 }
