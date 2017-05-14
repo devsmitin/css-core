@@ -106,9 +106,9 @@ $input-background: 				#fff !default;
 $input-margin: 					0.25rem !default;
 $input-padding: 				0.5rem !default;
 $input-transition: 				all .3s !default;
-$placeholder-text-color: 		color("grey", "light-2") !default;
+$placeholder-text-color: 		#e0e0e0 !default;
 $input-label-color: 			$text-color !default;
-$input-border-color: 			color("grey", "light-1") !default;
+$input-border-color: 			#bdbdbd !default;
 $input-focus-color: 			$secondary-color !default;
 $input-invalid-color: 			$error-color !default;
 $input-font-size: 				1rem !default;
@@ -149,12 +149,12 @@ $button-flat-color: 			#343434 !default;
 $button-flat-disabled-color: 	lighten(#999, 10%) !default;
 
 // Floating buttons
-$button-floating-background: 		$secondary-color !default;
+$button-floating-background: 			$secondary-color !default;
 //$button-floating-background-hover: 	lighten($button-floating-background, 10%) !default;
-$button-floating-color: 			#fff !default;
-$button-floating-size: 				35px !default;
-$button-floating-large-size: 		$button-floating-size * 1.6 !default;
-$button-floating-radius: 			50% !default;
+$button-floating-color: 				#fff !default;
+$button-floating-size: 					35px !default;
+$button-floating-large-size: 			$button-floating-size * 1.6 !default;
+$button-floating-radius: 				50% !default;
 
 
 
