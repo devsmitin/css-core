@@ -13,6 +13,8 @@
 		<style type="text/css">
 			/*html {font-family: Georgia;}*/
 			/*h1, h2, nav .brand-logo {font-family: Georgia;}*/
+			.grad {background: linear-gradient(141deg, #9246c1 20%, #5dcdef 80%) !important}
+			.text-shadowed {text-shadow: 0px 5px 7px rgba(35,35,35,.80)}
 			@media only screen and (min-width: 993px){
 				.sidenav-md nav {width: 300px;}
 				.sidenav-md, .sidenav-md nav{height: auto; height: 100%}
@@ -23,6 +25,7 @@
 				.sidenav-md nav ul.main-nav > li .drop-content {width: 100%;position: relative;}
 				.sidenav-md nav ul.main-nav > li .drop-content li:not(:last-child) a {border: none;}
 				.has-sidenav-md {padding-left: 300px;}
+
 			}
 		</style>
 	</head>
@@ -31,11 +34,11 @@
 			<nav class="">
 				<div class="nav-wrapper">
 					<a href="#" class="collapse-button ripples" data-target="#main-nav">
-						<span class="orange" style=""></span>
-						<span class="orange" style=""></span>
-						<span class="orange" style=""></span>
+						<span class="grad" style=""></span>
+						<span class="grad" style=""></span>
+						<span class="grad" style=""></span>
 					</a>
-					<a href="#1" class="brand-logo ripples orange-text">CSS-Core<sup>&trade;</sup></a>
+					<a href="#1" class="brand-logo ripples grad-text">CSS-Core<sup>&trade;</sup></a>
 					<ul class="main-nav altr" id="main-nav">
 						<!-- <li>
 							<a href="#" class="dropdown ripples" data-target="#drop1">Features <i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -44,8 +47,8 @@
 								<li><a href="#3" class="ripples">Typography</a></li>
 							</ul>
 						</li> -->
-						<li><a href="#2" class="ripples"><i class="fa fa-th-large" aria-hidden="true"></i> Grid</a></li>
-						<li><a href="#3" class="ripples"><i class="fa fa-font" aria-hidden="true"></i> Typography</a></li>
+						<li><a href="#2" class="ripples"><i class="fa fa-th-large blue-text" aria-hidden="true"></i> Grid</a></li>
+						<li><a href="#3" class="ripples"><i class="fa fa-font blue-text" aria-hidden="true"></i> Typography</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -53,13 +56,13 @@
 
 		<div class="has-sidenav-md">
 			<div class="container-full">
-				<header class="orange grey-text text-dark-4" id="1">
+				<header class="grad white-text" id="1">
 					<div class="row">
 						<div class="col sm-10 offset-sm-1">
-							<h1>CSS-Core</h1>
+							<h1 class="bold text-shadowed">CSS-Core</h1>
 							<h4>Create stunning websites from scratch - easily!</h4>
-							<p>Preview: 1 | Last update: May 14</p>
-							<a href="https://github.com/imsmit/css-core" class="btn underline orange light-2 grey-text text-dark-4 ripples"><i class="fa fa-github" aria-hidden="true"></i> View on GitHub</a>
+							<p>Preview: 1 | Last update: June 6</p>
+							<a href="https://github.com/imsmit/css-core" class="btn underline white-text ripples"><i class="fa fa-github" aria-hidden="true"></i> View on GitHub</a>
 						</div>
 					</div>
 				</header>
