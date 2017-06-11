@@ -1,0 +1,52 @@
+/**********************
+*   Tabs            *
+***********************
+*
+*/
+
+
+// Tabs
+
+.tabular {
+	@extend .shadow-2;
+	.tabs-nav {
+		margin-bottom: 0;
+		background-color: $primary-color;
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			border-top: 4px solid transparent;
+			> a {
+				padding: 0 0.75rem;
+				margin: 0;
+				display: inline-block;
+				color: $text-color;
+				line-height: $navbar-height - 4px;
+				// &:hover, &:active {
+				// 	background-color: rgba(#b4b4b4, 0.3);
+				// }
+			}
+			&.active {
+				border-color: $secondary-color;
+				transition: .3s;
+				> a {
+					color: $secondary-color;
+					background-color: rgba(#b4b4b4, 0.3);
+				}
+			}
+
+		}
+	}
+
+	.tabs-content {
+		background-color: #fff;
+		padding: 1rem 1.5rem;
+		.tabs-panel {
+			display: none;
+			&.active {
+				display: block;
+			}
+		}
+	}
+}

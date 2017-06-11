@@ -139,17 +139,19 @@ input[type=radio] {
 	& ~ label, & ~ span {
 		font-weight: normal;
 		cursor: pointer;
-		height: $input-height;
+		padding-left: 2rem;
+		position: relative;
 		&::before {
 			content: '';
+			display: inline-block;
 			height: 16px;
 			width: 16px;
-			border-radius: 50%;
+			position: absolute;
+			left: 0;
+			margin: 4px;
 			border: 2px solid $input-border-color;
+			border-radius: 50%;
 			background-color: #ffffff;
-			margin-bottom: 0.25rem;
-			margin-right: 0.5rem;
-			display: inline-block;
 			vertical-align:middle;
 			transition: 0.1s all;
 		}
@@ -178,17 +180,18 @@ input[type=checkbox] {
 	& ~ label, & ~ span {
 		font-weight: normal;
 		cursor: pointer;
-		height: $input-height;
+		padding-left: 2rem;
+		position: relative;
 		&::before {
 			content: '';
+			display: inline-block;
 			height: 16px;
 			width: 16px;
-			//border-radius: 2px;
+			position: absolute;
+			left: 0;
+			margin: 4px;
 			border: 2px solid $input-border-color;
 			background-color: #ffffff;
-			margin-bottom: 0.25rem;
-			margin-right: 0.5rem;
-			display: inline-block;
 			vertical-align:middle;
 			transition: 0.1s all;
 		}		
@@ -204,11 +207,11 @@ input[type=checkbox] {
 	&:checked ~ label, &:checked ~ span {
 		&::before {
 			border: 3px solid $input-focus-color;
-			width: 16px;
+			width: 18px;
 			height: 8px;
+			margin-top: 6px;
 			border-top: 0;
 			border-right: 0;
-			margin-bottom: 0.5rem;
 			transform: rotate(-50deg);
 		}
 	}

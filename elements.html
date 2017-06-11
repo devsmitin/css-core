@@ -31,6 +31,26 @@
 		</div>
 
 		<section class="white" id="1">
+			<div class="container orange">
+				<p class="">Container width on every device</p>
+			</div>
+			
+			<div class="container container-full orange">
+				<p class="">Full width on every device</p>
+			</div>
+
+			<div class="container container-sm orange">
+				<p class="">Full width after sm device</p>
+			</div>
+
+			<div class="container container-md orange">
+				<p class="">Full width after md device</p>
+			</div>
+
+			<div class="container container-lg orange">
+				<p class="">Full width after large device</p>
+			</div>
+
 			<div class="container blue center-align">
 				<div class="row" style="min-height: 100px;">
 					<div class="col sm-12 white-text">
@@ -673,6 +693,26 @@
 							</table>
 						</div>
 					</div>
+					<div class="col sm-12">
+						<div class="tabular">
+	                        <ul class="tabs-nav">
+	                            <li class="active"><a href="#" data-target="#tab1">Tab 1</a></li>
+	                            <li><a href="#" data-target="#tab2">Tab 2</a></li>
+	                            <li><a href="#" data-target="#tab3">Tab 3</a></li>
+	                    	</ul>
+	                    	<div class="tabs-content">
+                        	    <div class="tabs-panel active" id="tab1">
+                        	    	<p>This is tab 1 content</p>
+                        		</div>
+                    		    <div class="tabs-panel" id="tab2">
+                        	    	<p>This is tab 2 content</p>
+                        		</div>
+                    		    <div class="tabs-panel" id="tab3">
+                        	    	<p>This is tab 3 content</p>
+                        		</div>
+                    		</div>
+                		</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -712,6 +752,14 @@
 			function snackCallback() {
 				alert('This Snackbar will be dismissed!');
 			}
+
+			$('.tabular .tabs-nav li a').click(function() {
+			    if (!($(this).parent()).hasClass('active')) {
+			        $($(this).parent()).addClass('active').siblings().removeClass('active');
+			        $(($(this).attr('data-target'))).addClass('active').siblings().removeClass('active');
+			    }
+			});
+
 		</script>
 	</body>
 </html>

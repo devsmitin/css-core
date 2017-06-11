@@ -1,4 +1,4 @@
-/********************** Rock-Solid CSS    * Build: 050317     * Contents: 1. Normalize CSS 2. Material colors 3. Responsive containers 4. Typography 5. Navbar 6. Cards 7. Lists 8. Tables 9. Inputs 10. Buttons 11. CSS only ripple effect 12. Parallax 13. CSS only carousel 14. Preload 15. Tooltip (buggy) 16. Dialog 17. Notif (Snackbar) 18. Imagebox 19. Accordion 20. Menu (dropdown) 21.	Footer */
+/********************** Rock-Solid CSS    * Build: 050317     * Contents: 1. Normalize CSS 2. Material colors 3. Responsive containers 4. Typography 5. Navbar 6. Cards 7. Lists 8. Tables 9. Inputs 10. Buttons 11. CSS only ripple effect 12. Parallax 13. CSS only carousel 14. Preload 15. Tooltip (buggy) 16. Dialog 17. Notif (Snackbar) 18. Imagebox 19. Accordion 20. Tabs 20. Menu (dropdown) 21.	Footer */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /** 1. Change the default font family in all browsers (opinionated). 2. Correct the line height in all browsers. 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
 /* Document ========================================================================== */
@@ -966,19 +966,22 @@ article .container { width: 95%; }
 
 .container { position: relative; margin-left: auto; margin-right: auto; max-width: 100%; }
 
-.container-full, .container .sm-full-width, .container.carousel { width: 100%; }
+.container.container-full, .container.carousel { width: 100%; }
 
-@media only screen and (min-width: 560px) { .container, .container.sm-full-width { width: 540px; } }
+@media only screen and (min-width: 560px) { .container { width: 540px; } }
 
-@media only screen and (min-width: 768px) { .container, .container.sm-full-width { width: 720px; } }
+@media only screen and (min-width: 768px) { .container { width: 720px; }
+  .container.container-sm { width: 100%; } }
 
-@media only screen and (min-width: 993px) { .container, .container.carousel, .container.sm-full-width { width: 960px; } }
+@media only screen and (min-width: 993px) { .container, .container.carousel { width: 960px; }
+  .container.container-md, .container.carousel.container-md { width: 100%; } }
 
-@media only screen and (min-width: 1200px) { .container, .container.carousel, .container.sm-full-width { width: 1140px; } }
+@media only screen and (min-width: 1200px) { .container, .container.carousel { width: 1140px; }
+  .container.container-lg, .container.carousel.container-lg { width: 100%; } }
 
 .row { margin-left: auto; margin-right: auto; }
 
-.row::after { content: ""; display: -ms-flexbox; display: -webkit-flex; display: flex; clear: both; }
+.row::after { content: ''; display: -webkit-flex; display: -ms-flexbox; display: flex; clear: both; }
 
 .row .col { width: 100%; float: left; box-sizing: border-box; padding: 0 0.75rem; min-height: 1px; }
 
@@ -1336,7 +1339,7 @@ body.theme-fusion-dark footer, body.theme-fusion-dark footer a, body.theme-fusio
 
 .shadow-1, img.avatar, .tags span, .card, .btn, .btn-large, .carousel .carousel-nav label, .accordion { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
 
-.shadow-2, article, .fixed-nav nav, input[type=text].bordered:focus, input[type=password].bordered:focus, input[type=email].bordered:focus, input[type=url].bordered:focus, input[type=time].bordered:focus, input[type=date].bordered:focus, input[type=datetime].bordered:focus, input[type=datetime-local].bordered:focus, input[type=tel].bordered:focus, input[type=number].bordered:focus, input[type=search].bordered:focus, input[type=checkbox].bordered:focus, input[type=radio].bordered:focus, textarea.bordered:focus, select.bordered:focus { box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
+.shadow-2, article, .fixed-nav nav, input[type=text].bordered:focus, input[type=password].bordered:focus, input[type=email].bordered:focus, input[type=url].bordered:focus, input[type=time].bordered:focus, input[type=date].bordered:focus, input[type=datetime].bordered:focus, input[type=datetime-local].bordered:focus, input[type=tel].bordered:focus, input[type=number].bordered:focus, input[type=search].bordered:focus, input[type=checkbox].bordered:focus, input[type=radio].bordered:focus, textarea.bordered:focus, select.bordered:focus, .tabular { box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
 
 .shadow-3, nav ul.drop-content, .btn:focus, .btn-large:focus, .btn-floating:focus, .btn-more:focus, .preload .preload-bar, .dropdown-wrapper .drop-content { box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
 
@@ -1718,9 +1721,9 @@ input[type=file]:focus { outline: 1px dotted; }
 
 input[type=radio] { opacity: 0; position: fixed; }
 
-input[type=radio] ~ label, input[type=radio] ~ span { font-weight: normal; cursor: pointer; height: 36px; }
+input[type=radio] ~ label, input[type=radio] ~ span { font-weight: normal; cursor: pointer; padding-left: 2rem; position: relative; }
 
-input[type=radio] ~ label::before, input[type=radio] ~ span::before { content: ''; height: 16px; width: 16px; border-radius: 50%; border: 2px solid #bdbdbd; background-color: #ffffff; margin-bottom: 0.25rem; margin-right: 0.5rem; display: inline-block; vertical-align: middle; transition: 0.1s all; }
+input[type=radio] ~ label::before, input[type=radio] ~ span::before { content: ''; display: inline-block; height: 16px; width: 16px; position: absolute; left: 0; margin: 4px; border: 2px solid #bdbdbd; border-radius: 50%; background-color: #ffffff; vertical-align: middle; transition: 0.1s all; }
 
 input[type=radio] ~ label:hover::before, input[type=radio] ~ span:hover::before { border-color: #2196F3; }
 
@@ -1730,15 +1733,15 @@ input[type=radio]:checked ~ label::before, input[type=radio]:checked ~ span::bef
 
 input[type=checkbox] { opacity: 0; position: fixed; }
 
-input[type=checkbox] ~ label, input[type=checkbox] ~ span { font-weight: normal; cursor: pointer; height: 36px; }
+input[type=checkbox] ~ label, input[type=checkbox] ~ span { font-weight: normal; cursor: pointer; padding-left: 2rem; position: relative; }
 
-input[type=checkbox] ~ label::before, input[type=checkbox] ~ span::before { content: ''; height: 16px; width: 16px; border: 2px solid #bdbdbd; background-color: #ffffff; margin-bottom: 0.25rem; margin-right: 0.5rem; display: inline-block; vertical-align: middle; transition: 0.1s all; }
+input[type=checkbox] ~ label::before, input[type=checkbox] ~ span::before { content: ''; display: inline-block; height: 16px; width: 16px; position: absolute; left: 0; margin: 4px; border: 2px solid #bdbdbd; background-color: #ffffff; vertical-align: middle; transition: 0.1s all; }
 
 input[type=checkbox] ~ label:hover::before, input[type=checkbox] ~ span:hover::before { border-color: #2196F3; }
 
 input[type=checkbox]:focus ~ label, input[type=checkbox]:focus ~ span { outline: 1px dotted; }
 
-input[type=checkbox]:checked ~ label::before, input[type=checkbox]:checked ~ span::before { border: 3px solid #2196F3; width: 16px; height: 8px; border-top: 0; border-right: 0; margin-bottom: 0.5rem; -webkit-transform: rotate(-50deg); -ms-transform: rotate(-50deg); transform: rotate(-50deg); }
+input[type=checkbox]:checked ~ label::before, input[type=checkbox]:checked ~ span::before { border: 3px solid #2196F3; width: 18px; height: 8px; margin-top: 6px; border-top: 0; border-right: 0; -webkit-transform: rotate(-50deg); -ms-transform: rotate(-50deg); transform: rotate(-50deg); }
 
 input[type=range] { background-color: transparent; border: none; width: 100%; margin: 15px 0; padding: 0; cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 1px solid transparent; }
 
@@ -2065,6 +2068,27 @@ button.btn-floating, button.btn-more { border: none; }
 .accordion ul.accordion-list li > a i { margin: 0 .5rem; line-height: inherit; }
 
 .accordion .accordion-content { display: none; padding: .5rem 1.5rem; height: auto; position: relative; border-top: 1px solid #ddd; }
+
+/**********************
+*   Tabs            *
+***********************
+*
+*/
+.tabular .tabs-nav { margin-bottom: 0; background-color: #fafafa; }
+
+.tabular .tabs-nav li { display: inline-block; margin: 0; padding: 0; border-top: 4px solid transparent; }
+
+.tabular .tabs-nav li > a { padding: 0 0.75rem; margin: 0; display: inline-block; color: #212121; line-height: 52px; }
+
+.tabular .tabs-nav li.active { border-color: #2196F3; transition: .3s; }
+
+.tabular .tabs-nav li.active > a { color: #2196F3; background-color: rgba(180, 180, 180, 0.3); }
+
+.tabular .tabs-content { background-color: #fff; padding: 1rem 1.5rem; }
+
+.tabular .tabs-content .tabs-panel { display: none; }
+
+.tabular .tabs-content .tabs-panel.active { display: block; }
 
 /**********************
 *   Dropdown menu     *
