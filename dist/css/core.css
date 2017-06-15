@@ -1337,9 +1337,9 @@ body.theme-fusion-dark footer, body.theme-fusion-dark footer a, body.theme-fusio
 
 .shadow-0, .card .card-action .btn, .card .card-action .btn-large, .btn:active, .btn-large:active, .dialog .dialog-box .dialog-action .btn, .dialog .dialog-box .dialog-action .btn-large { box-shadow: none !important; }
 
-.shadow-1, img.avatar, .tags span, .card, .btn, .btn-large, .carousel .carousel-nav label, .accordion { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+.shadow-1, img.avatar, .tags span, .card, .btn, .btn-large, .carousel .carousel-nav label, .accordion, .tabular .tabs-nav li.active > a { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
 
-.shadow-2, article, .fixed-nav nav, input[type=text].bordered:focus, input[type=password].bordered:focus, input[type=email].bordered:focus, input[type=url].bordered:focus, input[type=time].bordered:focus, input[type=date].bordered:focus, input[type=datetime].bordered:focus, input[type=datetime-local].bordered:focus, input[type=tel].bordered:focus, input[type=number].bordered:focus, input[type=search].bordered:focus, input[type=checkbox].bordered:focus, input[type=radio].bordered:focus, textarea.bordered:focus, select.bordered:focus, .tabular { box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
+.shadow-2, article, .fixed-nav nav, input[type=text].bordered:focus, input[type=password].bordered:focus, input[type=email].bordered:focus, input[type=url].bordered:focus, input[type=time].bordered:focus, input[type=date].bordered:focus, input[type=datetime].bordered:focus, input[type=datetime-local].bordered:focus, input[type=tel].bordered:focus, input[type=number].bordered:focus, input[type=search].bordered:focus, input[type=checkbox].bordered:focus, input[type=radio].bordered:focus, textarea.bordered:focus, select.bordered:focus, .tabular .tabs-nav { box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
 
 .shadow-3, nav ul.drop-content, .btn:focus, .btn-large:focus, .btn-floating:focus, .btn-more:focus, .preload .preload-bar, .dropdown-wrapper .drop-content { box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
 
@@ -2074,15 +2074,15 @@ button.btn-floating, button.btn-more { border: none; }
 ***********************
 *
 */
-.tabular .tabs-nav { margin-bottom: 0; background-color: #fafafa; }
+.tabular .tabs-nav { display: inline-block; width: 100%; margin-bottom: 0; background-color: #fafafa; white-space: nowrap; overflow: hidden; overflow-x: auto; }
 
-.tabular .tabs-nav li { display: inline-block; margin: 0; padding: 0; border-top: 4px solid transparent; }
+.tabular .tabs-nav li { display: inline-block; margin: 4px; padding: 0; }
 
-.tabular .tabs-nav li > a { padding: 0 0.75rem; margin: 0; display: inline-block; color: #212121; line-height: 52px; }
+.tabular .tabs-nav li > a { padding: 0 0.75rem; margin: 0; display: inline-block; color: #212121; line-height: 3; border-radius: 2px; transition: .3s; }
 
-.tabular .tabs-nav li.active { border-color: #2196F3; transition: .3s; }
+.tabular .tabs-nav li > a:hover, .tabular .tabs-nav li > a:active { background-color: rgba(180, 180, 180, 0.3); }
 
-.tabular .tabs-nav li.active > a { color: #2196F3; background-color: rgba(180, 180, 180, 0.3); }
+.tabular .tabs-nav li.active > a { color: #fff; background-color: #2196F3; }
 
 .tabular .tabs-content { background-color: #fff; padding: 1rem 1.5rem; }
 
