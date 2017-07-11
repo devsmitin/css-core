@@ -77,7 +77,7 @@ article {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 100%;
-	&.container-full, &.carousel {
+	&.container-full {
 		width: 100%;
 	}
 }
@@ -91,27 +91,18 @@ article {
 	.container {
 		//width: 90%;
 		width: 720px;
-		&.container-sm {
-			width: 100%;
-		}
 	}
 }
 @media #{$large-and-up} {
-	.container, .container.carousel {
+	.container {
 		//width: 85%;
 		width: 960px;
-		&.container-md {
-			width: 100%;
-		}
 	}
 }
 @media #{$xlarge-and-up} {
-	.container, .container.carousel {
+	.container {
 		//width: 85%;
 		width: 1140px;
-		&.container-lg {
-			width: 100%;
-		}
 	}
 }
 
@@ -127,15 +118,11 @@ article {
 .row {
 	margin-left: auto;
 	margin-right: auto;
-	//margin-bottom: 20px;
-
 	&::after {
 		content: '';
-		// display: -ms-flexbox;
 		display: flex;
 		clear: both;
 	}
-
 	.col {
 		width: 100%;
 		float: left;
@@ -151,7 +138,7 @@ article {
 			$perc: unquote((100 / ($num-cols / $i)) + "%");			
 			&.xs-#{$i} {
 				width: $perc;
-				margin-left: auto;
+				// margin-left: auto;
 				left: auto;
 				right: auto;
 			}
@@ -177,7 +164,7 @@ article {
 				$perc: unquote((100 / ($num-cols / $i)) + "%");			
 				&.sm-#{$i} {
 					width: $perc;
-					margin-left: auto;
+					// margin-left: auto;
 					left: auto;
 					right: auto;
 				}
@@ -204,7 +191,7 @@ article {
 				$perc: unquote((100 / ($num-cols / $i)) + "%");				
 				&.md-#{$i} {
 					width: $perc;
-					margin-left: auto;
+					// margin-left: auto;
 					left: auto;
 					right: auto;
 				}
@@ -231,7 +218,7 @@ article {
 				$perc: unquote((100 / ($num-cols / $i)) + "%");			
 				&.lg-#{$i} {
 					width: $perc;
-					margin-left: auto;
+					// margin-left: auto;
 					left: auto;
 					right: auto;
 				}
@@ -258,7 +245,7 @@ article {
 				$perc: unquote((100 / ($num-cols / $i)) + "%");			
 				&.xl-#{$i} {
 					width: $perc;
-					margin-left: auto;
+					// margin-left: auto;
 					left: auto;
 					right: auto;
 				}
