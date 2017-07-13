@@ -931,7 +931,6 @@ template { display: none; }
 
 /**********************
 *   Containers & Grid *
-*   Updated: 160317   *
 ***********************
 *
 */
@@ -966,19 +965,23 @@ article .container { width: 95%; }
 
 .container { position: relative; margin-left: auto; margin-right: auto; max-width: 100%; }
 
-.container.container-full { width: 100%; }
+.container-full { width: 100%; }
 
-@media only screen and (min-width: 560px) { .container { width: 540px; } }
+@media only screen and (min-width: 560px) { .container { width: 540px; }
+  .container-sm, .container-md, .container-lg, .container-full { width: 100%; } }
 
-@media only screen and (min-width: 768px) { .container { width: 720px; } }
+@media only screen and (min-width: 768px) { .container { width: 720px; }
+  .container-md, .container-lg, .container-full { width: 100%; } }
 
-@media only screen and (min-width: 993px) { .container { width: 960px; } }
+@media only screen and (min-width: 993px) { .container { width: 960px; }
+  .container-lg, .container-full { width: 100%; } }
 
-@media only screen and (min-width: 1200px) { .container { width: 1140px; } }
+@media only screen and (min-width: 1200px) { .container { width: 1140px; }
+  .container-full { width: 100%; } }
 
 .row { margin-left: auto; margin-right: auto; }
 
-.row::after { content: ''; display: -webkit-flex; display: -ms-flexbox; display: flex; clear: both; }
+.row:after { content: ''; display: -webkit-flex; display: -ms-flexbox; display: flex; clear: both; }
 
 .row .col { width: 100%; float: left; box-sizing: border-box; padding: 0 0.75rem; min-height: 1px; }
 
