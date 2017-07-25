@@ -8,11 +8,16 @@
 // Imagebox
 
 .img-view {
-	cursor:zoom-in;
+	// cursor:zoom-in;
 	transition: 0.3s all;
 	&:hover {
 		opacity: 0.8;
 	}
+}
+
+
+img.img-view {
+	cursor:zoom-in;
 }
 
 .imgbox {

@@ -155,7 +155,7 @@
                 $slides = $elm.find('.slider-item'),
                 $autoslide = $elm.attr('data-autoslide') ? $elm.attr('data-autoslide') : false,
                 $delay = $elm.attr('data-delay') ? $elm.attr('data-delay') : 5000;
-                var $touchs = $elm.attr('data-touch') ? $elm.attr('data-touch') : false;
+            var $touchs = $elm.attr('data-touch') ? $elm.attr('data-touch') : false;
 
             var $nav = $('<ul />', { class: 'slider-nav' }),
                 $navitems,
@@ -299,10 +299,14 @@
             }
 
             $elm.on('click', function(e) {
-                var $isrc = $(this).attr('src'),
+                var isrc = $(this).attr('data-src') ? $elm.attr('data-src') : $elm.attr('src'),
                     alt = $(this).attr('alt'),
-                    image = $('<img/>', { src: $isrc }),
+                    image = $('<img/>', { src: isrc }),
                     cap = '';
+
+                if (!isrc) {
+                    return false;
+                }
 
                 if (alt) {
                     cap = $('<span/>').html(alt);
@@ -312,6 +316,13 @@
             });
             $('body').click(function(e) {
                 if ($(e.target).is($('.imgbox, .imgbox img'))) {
+                    hideImg();
+                }
+            });
+
+            $(document).keydown(function(e) {
+                var key = e.keyCode || e.which;
+                if (key == 27) {
                     hideImg();
                 }
             });
@@ -385,7 +396,7 @@ jQuery(document).ready(function($) {
 
 
 function alertME(msg) {
-    event.preventDefault();
+    // event.preventDefault();
 
     $('#alrt-dialog').remove();
 
@@ -414,4 +425,6 @@ function alertME(msg) {
     $(alert.find('.dialog-close')).on('click', function() {
         $('#alrt-dialog').remove();
     });
+
+    return false;
 }

@@ -17,7 +17,7 @@ header, .header {
 // Section
 
 section, .section {
-	padding: 2rem 0;	
+	padding: 2rem 0;
 	&.artical-head {
 		height: 35vh;
 	}
@@ -34,42 +34,7 @@ section, .section {
 
 // Page
 
-article {
-	margin: 0 auto 0;
-	padding: 30px 0;
-	max-width: 1140px;
-	width: 95%;
-	background-color: white !important;
-	@extend .shadow-2;
-	&.heads-up{
-		margin: -30vh auto 60px;
-	}
-	&.no-pad {
-		padding: 0;
-	}
-	&.no-pad-bot {
-		padding-bottom: 0;
-	}
-	&.no-pad-top {
-		padding-top: 0;
-	}
-	.container {
-		width: 95%;
-	}
-}
-@media #{$medium-and-up} {
-	article {
-		width: 80%;
-		padding: 60px 0;
-		&.heads-up {
-			margin-top: -35vh;
-		}
-	}
-}
-
-
-
-// Container 
+// Container
 
 .container {
 	position: relative;
@@ -140,7 +105,7 @@ article {
 		}
 		$i: 1;
 		@while $i <= $num-cols {
-			$perc: unquote((100 / ($num-cols / $i)) + "%");			
+			$perc: unquote((100 / ($num-cols / $i)) + "%");
 			&.xs-#{$i} {
 				width: $perc;
 				// margin-left: auto;
@@ -151,7 +116,7 @@ article {
 		}
 		$i: 1;
 		@while $i <= $num-cols {
-			$perc: unquote((100 / ($num-cols / $i)) + "%");			
+			$perc: unquote((100 / ($num-cols / $i)) + "%");
 			&.offset-xs-#{$i} {
 				margin-left: $perc;
 			}
@@ -166,7 +131,7 @@ article {
 		@media #{$small-and-up} {
 			$i: 1;
 			@while $i <= $num-cols {
-				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
 				&.sm-#{$i} {
 					width: $perc;
 					// margin-left: auto;
@@ -177,7 +142,7 @@ article {
 			}
 			$i: 1;
 			@while $i <= $num-cols {
-				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
 				&.offset-sm-#{$i} {
 					margin-left: $perc;
 				}
@@ -193,7 +158,7 @@ article {
 		@media #{$medium-and-up} {
 			$i: 1;
 			@while $i <= $num-cols {
-				$perc: unquote((100 / ($num-cols / $i)) + "%");				
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
 				&.md-#{$i} {
 					width: $perc;
 					// margin-left: auto;
@@ -220,7 +185,7 @@ article {
 		@media #{$large-and-up} {
 			$i: 1;
 			@while $i <= $num-cols {
-				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
 				&.lg-#{$i} {
 					width: $perc;
 					// margin-left: auto;
@@ -247,7 +212,7 @@ article {
 		@media #{$xlarge-and-up} {
 			$i: 1;
 			@while $i <= $num-cols {
-				$perc: unquote((100 / ($num-cols / $i)) + "%");			
+				$perc: unquote((100 / ($num-cols / $i)) + "%");
 				&.xl-#{$i} {
 					width: $perc;
 					// margin-left: auto;
