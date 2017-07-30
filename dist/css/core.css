@@ -1955,7 +1955,7 @@ button.btn-floating, button.btn-more { border: none; }
 
 .dialog .dialog-box .dialog-content .dialog-title { font-size: 1.75rem; }
 
-.dialog .dialog-box .dialog-action { border-radius: 0 0 2px 2px; width: 100%; padding: 0.5rem; background-color: #fafafa; }
+.dialog .dialog-box .dialog-action { border-radius: 0 0 2px 2px; width: 100%; padding: 0.5rem; }
 
 .dialog .dialog-box .dialog-action .btn, .dialog .dialog-box .dialog-action .btn-large { background-color: rgba(0, 0, 0, 0.1); color: #343434; }
 

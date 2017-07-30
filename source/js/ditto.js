@@ -380,6 +380,87 @@
             });
         });
     };
+
+    $.fn.alertSM = $.alertSM = function(arr) {
+        var opt = $.extend({
+                msg: 'Alert!',
+                type: 'alert',
+                tout: '3000', 
+                actn: '', 
+                callfun: '',
+                theme: ''
+            }, arr),
+            timeStamp = $.now();
+
+
+        if (opt.type == 'snackbar') {
+            $('.snackbar').remove();
+
+            var snackbar = $('<div />', { class: 'snackbar hide' }),
+                snackbarmsg = $('<span />');
+
+            $(snackbar).appendTo('body').fadeIn().removeClass('hide').css('display', '');
+            $(snackbarmsg).appendTo(snackbar).html(opt.msg);
+
+            if (opt.theme) {
+                $(snackbar).addClass(opt.theme);
+            }
+
+            if (opt.actn) {
+                var snackbaractn = $('<button />', { class: 'btn-flat action' });
+
+                $(snackbaractn).appendTo(snackbar).html(opt.actn);
+
+                if (opt.callfun) {
+                    $(snackbaractn).attr('onclick', opt.callfun);
+                }
+
+                $(snackbaractn).on('click', function() {
+                    $(this).parent().fadeOut(500, function() {
+                        $(this).remove();
+                    });
+                });
+            } else {
+                $(snackbar).delay(opt.tout).fadeOut(500, function() {
+                    $(this).remove();
+                });
+            }
+        } else {
+            $('#alrt-dialog').remove();
+            var alert = $('<div/>', { class: 'dialog', id: 'alrt-dialog', role: 'dialog', tabindex: '-1' }),
+                alertDialog = $('<div/>', { class: 'dialog-box alert-box', role: 'document' }),
+                alertContent = $('<div/>', { class: 'dialog-content' }),
+                alertTitle = $('<h4 />', { class: 'dialog-title' }),
+                alertBody = $('<p/>', { class: 'modal-body' });
+
+            var alertFooter = $('<div/>', { class: 'dialog-action right-align' }),
+                alertActn = $('<input/>', { class: 'btn btn-flat ripples dialog-close', type: 'button', value: 'Close' });
+
+            alertTitle.html('Alert!');
+            alertBody.html(opt.msg);
+
+            alert.appendTo('body');
+            alertDialog.appendTo(alert);
+            alertContent.appendTo(alertDialog);
+            alertTitle.appendTo(alertContent);
+            alertBody.appendTo(alertContent);
+            alertFooter.appendTo(alertDialog);
+            alertActn.appendTo(alertFooter);
+
+            if (opt.theme) {
+                $(alertDialog).addClass(opt.theme);
+            }
+
+            alert.show();
+
+            $(alert.find('.dialog-close')).on('click', function() {
+                $('#alrt-dialog').remove();
+            });
+
+            return false;
+        }
+    };
+
 }(jQuery));
 
 jQuery(document).ready(function($) {
@@ -393,38 +474,3 @@ jQuery(document).ready(function($) {
     $('.img-view').imgbox();
     $('.show-snackbar').snackbar();
 });
-
-
-function alertME(msg) {
-    // event.preventDefault();
-
-    $('#alrt-dialog').remove();
-
-    var alert = $('<div/>', { class: 'dialog', id: 'alrt-dialog', role: 'dialog', tabindex: '-1' });
-    var alertDialog = $('<div/>', { class: 'dialog-box alert-box', role: 'document' });
-    var alertContent = $('<div/>', { class: 'dialog-content' });
-    var alertTitle = $('<h4 />', { class: 'dialog-title' });
-    var alertBody = $('<p/>', { class: 'modal-body' });
-
-    var alertFooter = $('<div/>', { class: 'dialog-action right-align' });
-    var alertActn = $('<input/>', { class: 'btn btn-flat ripples dialog-close', type: 'button', value: 'Close' });
-
-    alertTitle.html('Alert!');
-    alertBody.html(msg);
-
-    alert.appendTo('body');
-    alertDialog.appendTo(alert);
-    alertContent.appendTo(alertDialog);
-    alertTitle.appendTo(alertContent);
-    alertBody.appendTo(alertContent);
-    alertFooter.appendTo(alertDialog);
-    alertActn.appendTo(alertFooter);
-
-    alert.show();
-
-    $(alert.find('.dialog-close')).on('click', function() {
-        $('#alrt-dialog').remove();
-    });
-
-    return false;
-}
